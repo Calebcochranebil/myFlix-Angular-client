@@ -1,6 +1,6 @@
-$secondary-color: hsl(0, 0%, 27%);
+$secondary-color: hsl(127, 66%, 28%);
 
-.movie-card-container {
+.favorite-movies-view {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,6 +8,10 @@ $secondary-color: hsl(0, 0%, 27%);
   gap: 20px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.favorite-movies__title {
+  padding-top: 20px;
 }
 
 img {
@@ -18,6 +22,7 @@ img {
 
 mat-card-title {
   font-size: 24px;
+  text-align: left;
 }
 
 mat-card-subtitle {

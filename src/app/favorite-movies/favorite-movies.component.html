@@ -1,6 +1,6 @@
-<app-nav-bar></app-nav-bar>
-<div class="movie-card-container">
-  <mat-card *ngFor="let movie of movies" class="movie-card">
+<h2 class="favorite-movies__title">My Favorite Movies</h2>
+<div class="favorite-movies-view">
+  <mat-card *ngFor="let movie of favoriteMovies" class="movie-card">
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
@@ -32,7 +32,7 @@
       <button
         mat-button
         color="primary"
-        (click)="openDetails(movie.Title, movie.Description)"
+        (click)="openSynopsis(movie.Title, movie.Description)"
       >
         Synopsis
       </button>
