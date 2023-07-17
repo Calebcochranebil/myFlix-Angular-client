@@ -1,5 +1,5 @@
-Fimport { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service'
+import { Component, OnInit } from '@angular/core';
+import { FetchApiDataService } from '../fetch-api-data.service';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { DetailsViewComponent } from '../details-view/details-view.component';
@@ -12,13 +12,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent implements OnInit {
   /**
-   * below variables will manage the data received from the API calls 
-   * @movies stores the movies array from the database 
-   * @favorites stores the array of user's favorite movies 
+   * below variables will manage the data received from the API calls
+   * @movies stores the movies array from the database
+   * @favorites stores the array of user's favorite movies
    */
   movies: any[] = [];
   favorites: any[] = [];
@@ -27,7 +27,7 @@ export class MovieCardComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
     public snackbar: MatSnackBar
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -41,12 +41,12 @@ export class MovieCardComponent implements OnInit {
    */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-        this.movies = resp;
-        console.log(this.movies);
-        return this.movies;
-      });
-    }
-  
+      this.movies = resp;
+      console.log(this.movies);
+      return this.movies;
+    });
+  }
+
   /**
    * Fetches user's favorite movies using the API call fetchApiData.getUser()
    * @function getFavorites
@@ -83,7 +83,7 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-   /**
+  /**
    * Removes movie from user's favorite movies list using the API call fetchApiData.deleteFavMovie()
    * @function removeFromFavorites
    * @param id of movie, type: string
@@ -143,5 +143,4 @@ export class MovieCardComponent implements OnInit {
       width: '600px',
     });
   }
-
 }
