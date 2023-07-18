@@ -1,22 +1,65 @@
-$secondary-color: hsl(127, 66%, 28%);
+// Define your color scheme
+$color-primary: #ff5733; // Vibrant orange
+$color-secondary: #33ffc1; // Bright turquoise
+$color-text: #7d7d7d; // Dark gray
+
+.container {
+  background: url("https://gearmoose.com/wp-content/uploads/2021/06/Best-Movies-to-Watch-on-the-4th-of-July.jpg")
+    center/cover;
+  height: 100%;
+}
 
 .main-page {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding-top: 80px;
+  height: 100%;
+  color: $color-text;
+
+  h1 {
+    font-size: 72px;
+    animation: bounce-in 1.5s ease;
+  }
+
+  .welcome-buttons {
+    display: flex;
+    width: 60%;
+
+    // Apply animation to buttons
+    button {
+      flex: 1;
+      padding: 12px 4px;
+      margin: 5px;
+      border: none;
+      color: $color-text;
+      background-color: $color-primary;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
+  }
 }
 
-button {
-  flex: 1;
-  padding: 12px 4px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  width: 5%;
-}
-
-h1 {
-  font-size: 46px;
+// Keyframe animation for the heading
+@keyframes bounce-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
